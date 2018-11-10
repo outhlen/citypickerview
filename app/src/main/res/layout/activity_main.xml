@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ihidea.as.citypicker.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/c_blue"
+        android:gravity="center"
+        android:text="城市选择器"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/citypicker_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</LinearLayout>

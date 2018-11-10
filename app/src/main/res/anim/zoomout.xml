@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<set xmlns:Android="http://schemas.android.com/apk/res/android"
+    Android:interpolator="@android:anim/decelerate_interpolator"
+    Android:zAdjustment="top">
+    <scale
+        Android:duration="@android:integer/config_mediumAnimTime"
+        Android:fromXScale="1.0"
+        Android:fromYScale="1.0"
+        Android:pivotX="50%p"
+        Android:pivotY="50%p"
+        Android:toXScale=".5"
+        Android:toYScale=".5" />
+    <alpha
+        Android:duration="@android:integer/config_mediumAnimTime"
+        Android:fromAlpha="1.0"
+        Android:toAlpha="0" />
+</set>

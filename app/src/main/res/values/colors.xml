@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="material_red_50">#e1f5fe</color>
+    <color name="material_red_500">#e51c23</color>
+    <color name="material_red_700">#d01716</color>
+    <color name="white">#ffffff</color>
+    <color name="background">#f8f8f8</color>
+    <color name="c_f8f8f8">#f8f8f8</color>
+    <color name="item_background_selected">#f1f1f1</color>
+    <color name="item_background_normal">#FAFAFA</color>
+    <color name="text_grey">#B6A693</color>
+    <color name="text_title">#333333</color>
+    <color name="text_time">#666666</color>
+    <color name="line">#999999</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_dddddd">#DDDDDD</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_blue">#40c2fc</color>
+
+    <color name="material_blue_500">#03a9f4</color>
+    <color name="material_blue_700">#0288d1</color>
+    <color name="half_transparent">#20000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="material_grey_900">#212121</color>
+    <color name="material_blue_personal_center_bg">#0091ea</color>
+    <color name="c_background">#f4f5f6</color>
+    <color name="c_common_bg_selected">#EEEEEE</color>
+    <color name="background_window">#FFE5E5E5</color>
+
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="colorControlActivated">#FF03A9F4</color>
+    <color name="colorSwitchThumbNormal">#FF78909C</color>
+
+    <color name="colorPrimaryQuarter">#3303A9F4</color>
+    <color name="colorPrimaryHalf">#9003A9F4</color>
+    <color name="colorControlNormalHalf">#9078909C</color>
+    <color name="colorControlActivatedHalf">#9003A9F4</color>
+    <color name="colorAccentQuarter">#3300E5FF</color>
+    <color name="colorAccentHalf">#9000E5FF</color>
+
+    <array name="progress_colors_light">
+        <item>#FF03A9F4</item>
+        <item>#FFD8433C</item>
+        <item>#FFF2AF3A</item>
+        <item>#FF279B5E</item>
+    </array>
+
+    <array name="progress_colors_dark">
+        <item>#FF00E5FF</item>
+        <item>#ffd81d5a</item>
+        <item>#fff27512</item>
+        <item>#ff63bc34</item>
+    </array>
+
+    <array name="in_colors_light">
+        <item>#4B03A9F4</item>
+        <item>#3303A9F4</item>
+        <item>#1903A9F4</item>
+    </array>
+
+    <array name="in_colors_dark">
+        <item>#4B00E5FF</item>
+        <item>#3300E5FF</item>
+        <item>#1900E5FF</item>
+    </array>
+
+    <color name="tpi_checked">#FFFFFFFF</color>
+    <color name="tpi_unchecked">#99FFFFFF</color>
+
+    <color name="et_divider_focused">@color/colorControlActivated</color>
+    <color name="et_divider_not_focused">#FF6D6D6D</color>
+    <color name="et_divider_disable">#FFC1C1C1</color>
+</resources>

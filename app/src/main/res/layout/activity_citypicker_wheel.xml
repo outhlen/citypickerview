@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/c_blue"
+        android:gravity="center"
+        android:text="仿iOS滚轮选择"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+
+    <com.ihidea.as.citypicker.widget.MyNestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="属性设置："/>
+
+
+            <!--默认地址-->
+            <LinearLayout
+                style="@style/linearlayout_style"
+                >
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:layout_weight="1.3"
+                    android:text="默认地址:"
+                    />
+
+                <EditText
+                    android:id="@+id/pro_et"
+                    style="@style/linearlayout_edit_style"
+                    android:layout_weight="1"
+                    android:text="江苏省"
+                    />
+
+                <EditText
+                    android:id="@+id/city_et"
+                    style="@style/linearlayout_edit_style"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="常州市"
+                    />
+
+                <EditText
+                    android:id="@+id/area_et"
+                    style="@style/linearlayout_edit_style"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="天宁区"
+                    />
+
+
+            </LinearLayout>
+
+
+            <!--省份默认显示个数-->
+            <LinearLayout
+                style="@style/linearlayout_style">
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:text="省(市、区)默认显示个数:"
+                    />
+
+                <EditText
+                    android:id="@+id/pro_visible_count_et"
+                    style="@style/linearlayout_edit_style"
+                    android:text="5"
+                    />
+
+            </LinearLayout>
+
+
+            <!--显示一级、二级三级-->
+            <LinearLayout
+                style="@style/linearlayout_style"
+                >
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:layout_weight="1.3"
+                    android:text="显示几级联动"
+                    />
+
+                <TextView
+                    android:id="@+id/one_tv"
+                    style="@style/linearlayout_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/city_wheeltype_selected"
+                    android:gravity="center"
+                    android:text="省"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/two_tv"
+                    style="@style/linearlayout_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/city_wheeltype_normal"
+                    android:gravity="center"
+                    android:text="省市"
+                    />
+
+                <TextView
+                    android:id="@+id/three_tv"
+                    style="@style/linearlayout_text_style"
+                    android:layout_weight="1"
+                    android:background="@drawable/city_wheeltype_normal"
+                    android:gravity="center"
+                    android:text="省市区"
+                    />
+
+
+            </LinearLayout>
+
+
+            <!--是否显示半透明背景效果-->
+            <LinearLayout
+                style="@style/linearlayout_style">
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:text="是否显示半透明背景效果 :"
+                    />
+
+                <CheckBox
+                    android:id="@+id/half_bg_ck"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/city_cyclic"
+                    android:button="@null"
+                    android:checked="true"
+                    />
+
+            </LinearLayout>
+
+            <!--省份循环显示-->
+            <LinearLayout
+                style="@style/linearlayout_style">
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:text="省份是否循环显示 :"
+                    />
+
+                <CheckBox
+                    android:id="@+id/pro_cyclic_ck"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/city_cyclic"
+                    android:button="@null"
+                    android:checked="true"
+                    />
+
+            </LinearLayout>
+
+            <!--市循环显示-->
+            <LinearLayout
+                style="@style/linearlayout_style">
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:text="市是否循环显示 :"
+                    />
+
+                <CheckBox
+                    android:id="@+id/city_cyclic_ck"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/city_cyclic"
+                    android:button="@null"
+                    android:checked="true"
+                    />
+
+            </LinearLayout>
+
+            <!--区循环显示-->
+            <LinearLayout
+                style="@style/linearlayout_style">
+
+                <TextView
+                    style="@style/linearlayout_text_style"
+                    android:text="区是否循环显示 :"
+                    />
+
+                <CheckBox
+                    android:id="@+id/area_cyclic_ck"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/city_cyclic"
+                    android:button="@null"
+                    android:checked="true"
+                    />
+
+            </LinearLayout>
+
+
+            <!--区循环显示-->
+            <LinearLayout
+                style="@style/linearlayout_style"
+                android:layout_height="50dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp">
+
+                <TextView
+                    android:id="@+id/reset_setting_tv"
+                    style="@style/linearlayout_text_style"
+                    android:background="#ff40c2fc"
+                    android:gravity="center"
+                    android:text="恢复默认设置"
+                    android:textColor="@color/white"
+                    />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"></View>
+
+                <TextView
+                    android:id="@+id/submit_tv"
+                    style="@style/linearlayout_text_style"
+                    android:background="#ff40c2fc"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/result_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="选择结果："/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </com.ihidea.as.citypicker.widget.MyNestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ihidea.as.citypicker.activity.CitypickerListActivity">
+
+    <TextView
+        android:id="@+id/headview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ff40c2fc"
+        android:gravity="center"
+        android:text="城市列表选择"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headview"
+        android:padding="20dp"
+        android:text="结果："/>
+
+
+    <TextView
+        android:id="@+id/list_tv"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/c_blue"
+        android:gravity="center"
+        android:text="获取城市列表"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+</RelativeLayout>
