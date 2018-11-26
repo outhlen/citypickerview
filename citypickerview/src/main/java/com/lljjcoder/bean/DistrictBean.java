@@ -11,29 +11,38 @@ import android.os.Parcelable;
  */
 public class DistrictBean implements Parcelable {
 
-    private String id; /*110101*/
+    private String AREAID; /*110101*/
     
-    private String name; /*东城区*/
+    private String AREA; /*东城区*/
+
+    public String getAREAID() {
+        return AREAID;
+    }
+
+    public void setAREAID(String AREAID) {
+        this.AREAID = AREAID;
+    }
+
+    public String getAREA() {
+        return AREA;
+    }
+
+    public void setAREA(String AREA) {
+        this.AREA = AREA;
+    }
+
+    public DistrictBean() {
+    }
+
+    public DistrictBean(Parcel in) {
+        AREAID = in.readString();
+        AREA = in.readString();
+    }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    public String getId() {
-        return id == null ? "" : id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name == null ? "" : name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(AREAID);
+        dest.writeString(AREA);
     }
 
     @Override
@@ -41,24 +50,10 @@ public class DistrictBean implements Parcelable {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.id);
-        dest.writeString(this.name);
-    }
-
-    public DistrictBean() {
-    }
-
-    protected DistrictBean(Parcel in) {
-        this.id = in.readString();
-        this.name = in.readString();
-    }
-
     public static final Creator<DistrictBean> CREATOR = new Creator<DistrictBean>() {
         @Override
-        public DistrictBean createFromParcel(Parcel source) {
-            return new DistrictBean(source);
+        public DistrictBean createFromParcel(Parcel in) {
+            return new DistrictBean(in);
         }
 
         @Override

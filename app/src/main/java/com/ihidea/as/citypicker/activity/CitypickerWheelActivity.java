@@ -263,15 +263,15 @@ public class CitypickerWheelActivity extends AppCompatActivity {
                 StringBuilder sb = new StringBuilder();
                 sb.append("选择的结果：\n");
                 if (province != null) {
-                    sb.append(province.getName() + " " + province.getId() + "\n");
+                    sb.append(province.getPROVINCE()+ " " + province.getPROVINCEID() + "\n");
                 }
                 
                 if (city != null) {
-                    sb.append(city.getName() + " " + city.getId() + ("\n"));
+                    sb.append(city.getCITY() + " " + city.getCITYID() + ("\n"));
                 }
                 
                 if (district != null) {
-                    sb.append(district.getName() + " " + district.getId() + ("\n"));
+                    sb.append(district.getAREA() + " " + district.getAREAID()+ ("\n"));
                 }
                 
                 mResultTv.setText("" + sb.toString());

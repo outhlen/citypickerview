@@ -48,7 +48,7 @@ public class JDCityPicker implements CanShow {
         
         //解析初始数据
         if (parseHelper.getProvinceBeanArrayList().isEmpty()) {
-            parseHelper.initData(context);
+            parseHelper.initData(context,"");
         }
         
     }

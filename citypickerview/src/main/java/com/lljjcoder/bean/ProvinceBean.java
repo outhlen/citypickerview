@@ -13,34 +13,26 @@ import java.util.ArrayList;
  */
 public class ProvinceBean implements Parcelable {
 
-  private String id; /*110101*/
+  private String PROVINCEID; /*110101*/
 
-  private String name; /*东城区*/
-
+  private String PROVINCE; /*东城区*/
 
   private ArrayList<CityBean> cityList;
 
-
-
-  @Override
-  public String toString() {
-    return  name ;
+  public String getPROVINCEID() {
+    return PROVINCEID;
   }
 
-  public String getId() {
-    return id == null ? "" : id;
+  public void setPROVINCEID(String PROVINCEID) {
+    this.PROVINCEID = PROVINCEID;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public String getPROVINCE() {
+    return PROVINCE;
   }
 
-  public String getName() {
-    return name == null ? "" : name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void setPROVINCE(String PROVINCE) {
+    this.PROVINCE = PROVINCE;
   }
 
   public ArrayList<CityBean> getCityList() {
@@ -51,31 +43,31 @@ public class ProvinceBean implements Parcelable {
     this.cityList = cityList;
   }
 
+  public ProvinceBean() {
+  }
+
+  public ProvinceBean(Parcel in) {
+    PROVINCEID = in.readString();
+    PROVINCE = in.readString();
+    cityList = in.createTypedArrayList(CityBean.CREATOR);
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeString(PROVINCEID);
+    dest.writeString(PROVINCE);
+    dest.writeTypedList(cityList);
+  }
+
   @Override
   public int describeContents() {
     return 0;
   }
 
-  @Override
-  public void writeToParcel(Parcel dest, int flags) {
-    dest.writeString(this.id);
-    dest.writeString(this.name);
-    dest.writeTypedList(this.cityList);
-  }
-
-  public ProvinceBean() {
-  }
-
-  protected ProvinceBean(Parcel in) {
-    this.id = in.readString();
-    this.name = in.readString();
-    this.cityList = in.createTypedArrayList(CityBean.CREATOR);
-  }
-
   public static final Creator<ProvinceBean> CREATOR = new Creator<ProvinceBean>() {
     @Override
-    public ProvinceBean createFromParcel(Parcel source) {
-      return new ProvinceBean(source);
+    public ProvinceBean createFromParcel(Parcel in) {
+      return new ProvinceBean(in);
     }
 
     @Override

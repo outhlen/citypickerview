@@ -42,7 +42,7 @@ public class ProvinceAdapter extends BaseAdapter {
     
     @Override
     public long getItemId(int position) {
-        return Long.parseLong(mProList.get(position).getId());
+        return Long.parseLong(mProList.get(position).getPROVINCEID());
     }
     
     @Override
@@ -62,7 +62,7 @@ public class ProvinceAdapter extends BaseAdapter {
         }
 
         ProvinceBean item = getItem(position);
-        holder.textView.setText(item.getName());
+        holder.textView.setText(item.getPROVINCE());
 
         return convertView;
     }

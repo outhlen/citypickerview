@@ -1,6 +1,7 @@
 package com.lljjcoder.citywheel;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -8,6 +9,7 @@ import com.lljjcoder.Constant;
 import com.lljjcoder.bean.CityBean;
 import com.lljjcoder.bean.DistrictBean;
 import com.lljjcoder.bean.ProvinceBean;
+import com.lljjcoder.style.citypickerview.model.Province;
 import com.lljjcoder.utils.utils;
 
 import java.lang.reflect.Type;
@@ -24,7 +26,9 @@ import java.util.Map;
  */
 
 public class CityParseHelper {
-    
+
+    String cityJson = "";
+    Type type = null;
     /**
      * 省份数据
      */
@@ -148,18 +152,28 @@ public class CityParseHelper {
     public CityParseHelper() {
         
     }
-    
+
+    /**
+     *  获取接口数据源
+     */
+
+    public void setCitySource(List<Province> datas, Context context){
+        if(datas==null)
+            return;
+
+    }
+
     /**
      * 初始化数据，解析json数据
      */
-    public void initData(Context context) {
-        
-        String cityJson = utils.getJson(context, Constant.CITY_DATA);
-        Type type = new TypeToken<ArrayList<ProvinceBean>>() {
-        }.getType();
-        
+    public void initData(Context context,String jsonData) {
+        if(TextUtils.isEmpty(jsonData)){
+             cityJson = utils.getJson(context, Constant.CITY_DATA);
+        }else{
+             cityJson = jsonData;
+        }
+        type = new TypeToken<ArrayList<ProvinceBean>>() {}.getType();
         mProvinceBeanArrayList = new Gson().fromJson(cityJson, type);
-        
         if (mProvinceBeanArrayList == null || mProvinceBeanArrayList.isEmpty()) {
             return;
         }
@@ -173,7 +187,7 @@ public class CityParseHelper {
             List<CityBean> cityList = mProvinceBean.getCityList();
             if (cityList != null && !cityList.isEmpty() && cityList.size() > 0) {
                 mCityBean = cityList.get(0);
-                List<DistrictBean> districtList = mCityBean.getCityList();
+                List<DistrictBean> districtList = mCityBean.getCountyList();
                 if (districtList != null && !districtList.isEmpty() && districtList.size() > 0) {
                     mDistrictBean = districtList.get(0);
                 }
@@ -199,7 +213,7 @@ public class CityParseHelper {
                 cityNames[j] = cityList.get(j);
                 
                 //当前省份下面每个城市下面再次对应的区或者县
-                List<DistrictBean> districtList = cityList.get(j).getCityList();
+                List<DistrictBean> districtList = cityList.get(j).getCountyList();
                 if (districtList == null) {
                     break;
                 }
@@ -211,19 +225,19 @@ public class CityParseHelper {
                     DistrictBean districtModel = districtList.get(k);
                     
                     //存放 省市区-区 数据
-                    mDisMap.put(itemProvince.getName() + cityNames[j].getName() + districtList.get(k).getName(),
+                    mDisMap.put(itemProvince.getPROVINCE() + cityNames[j].getCITY() + districtList.get(k).getAREA(),
                             districtModel);
                     
                     distrinctArray[k] = districtModel;
                     
                 }
                 // 市-区/县的数据，保存到mDistrictDatasMap
-                mCity_DisMap.put(itemProvince.getName() + cityNames[j].getName(), distrinctArray);
+                mCity_DisMap.put(itemProvince.getPROVINCE() + cityNames[j].getCITY(), distrinctArray);
                 
             }
             
             // 省-市的数据，保存到mCitisDatasMap
-            mPro_CityMap.put(itemProvince.getName(), cityNames);
+            mPro_CityMap.put(itemProvince.getPROVINCE(), cityNames);
             
             mCityBeanArrayList.add(cityList);
             
@@ -232,7 +246,7 @@ public class CityParseHelper {
             
             for (int c = 0; c < cityList.size(); c++) {
                 CityBean cityBean = cityList.get(c);
-                array2DistrictLists.add(cityBean.getCityList());
+                array2DistrictLists.add(cityBean.getCountyList());
             }
             mDistrictBeanArrayList.add(array2DistrictLists);
             

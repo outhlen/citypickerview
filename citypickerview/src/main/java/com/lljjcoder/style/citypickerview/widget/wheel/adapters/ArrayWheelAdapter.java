@@ -17,6 +17,10 @@ package com.lljjcoder.style.citypickerview.widget.wheel.adapters;
 
 import android.content.Context;
 
+import com.lljjcoder.bean.CityBean;
+import com.lljjcoder.bean.DistrictBean;
+import com.lljjcoder.bean.ProvinceBean;
+
 /**
  * The simple Array wheel adapter
  * @param <T> the element type
@@ -39,13 +43,16 @@ public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
     }
     
     @Override
-    public CharSequence getItemText(int index) {
+    public String getItemText(int index) {
         if (index >= 0 && index < items.length) {
             T item = items[index];
-            if (item instanceof CharSequence) {
-                return (CharSequence) item;
+            if (item instanceof ProvinceBean) {
+                return  ((ProvinceBean) item).getPROVINCE();
+            } else if(item instanceof CityBean){
+                return ((CityBean) item).getCITY();
+            } else if(item instanceof DistrictBean){
+                return ((DistrictBean) item).getAREA();
             }
-            return item.toString();
         }
         return null;
     }

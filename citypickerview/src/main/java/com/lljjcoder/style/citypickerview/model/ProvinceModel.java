@@ -1,8 +1,9 @@
 package com.lljjcoder.style.citypickerview.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ProvinceModel {
+public class ProvinceModel implements Serializable {
 	private String name;
 	private List<CityModel> cityList;
 	
