@@ -72,6 +72,7 @@
         <com.lljjcoder.style.citypickerview.widget.wheel.WheelView
             android:id="@+id/id_district"
             android:layout_width="0dp"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
